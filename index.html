@@ -1,0 +1,101 @@
+<!doctype html>
+
+<!-- 
+
+    wrong place to look but you're getting warm >:)
+
+-->
+<html>
+    <head>
+        <title> happy birthday julia</title>
+        <link rel = "stylesheet" type="text/css" href="style.css">
+    </head>
+
+    <body>
+        <div class="the-text">
+            <p id = "the_text"></p>
+        </div>
+
+        <script>
+            //I mean if you reeeeallly want you can look at the script here and try to piece it together 
+            //but the best place to look to actually get to open this card is the javascript console
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            //okay fine look here if you really want :(
+            var the_text = 'good luck >:)';
+
+            
+            julia= ''
+            var julia_cachedValue=julia;
+            var firstTimeJulia = true;
+
+            console.log("Great job! You found the right place to look.")
+            console.log("Set the variable julia to whatever string you want so you can tell how this works.");
+            console.log("(e.g. julia = 'cool')")
+
+            function alwaysRun() {
+                document.getElementById("the_text").innerHTML = the_text;
+
+                if (julia != '' && firstTimeJulia) {
+                    console.log('Now look back at the main page and you get the gist.')
+                    the_text = `congratulations, you've solved my first riddle! but really, "julia = ${julia}"? come on dude. <br/> <br/> anyway run the function openCard()`
+                    firstTimeJulia=false;
+                }
+            }
+            
+            function openCard() {
+                var oslo = prompt("didn't think it'd be that easy huh? quick, what's the capital of norway?");
+                console.log(oslo.toLowerCase())
+                if (oslo.toLowerCase() == 'oslo') {
+                    //////////////the_text="nice. "
+                } else {
+                    oslo = prompt("nope, try again")
+                }
+            }
+
+            function Counter() {
+                let clicks = 0
+                this.registerClick = function() {
+                    ++clicks
+                    //console.log(clicks)
+                    if (clicks == 12) {
+                        alert("Clicking around won't help ya.")
+                    }
+                    if (clicks == 42) {
+                        alert("dude there's really nothing to click on")
+                    }
+                    if (clicks == 72) {
+                        alert("you clicked 72 times!!")
+                    }
+                    return clicks
+                }
+            }
+
+            const clicker = new Counter()
+
+            document.addEventListener("click", function() {
+            clicker.registerClick()
+            })
+
+
+            setInterval(alwaysRun, 100)
+            
+            
+        </script>
+
+    </body>
+</html>
