@@ -118,7 +118,8 @@
             }
 
             function morseCode() {
-                console.log("morsecodetime")
+                console.log("need to hear it again? run the function morseCode()")
+                new Audio('morsecode.mp3').play()
             }
 
             function prettyPleaseOpenCard() {
@@ -134,6 +135,7 @@
                         document.getElementById('form').style.display = 'none';
                         the_text = "right so you might wanna have your audio on now <3"
                         morseCode()
+                        console.log("need to hear it again? run the function morseCode() and be thankful i couldn't figure out how to play this on repeat forever")
                     } else if (team.toLowerCase() == "wildcats!!" || team.toLowerCase() == "wildcats!" || team.toLowerCase() == "wildcats") {
                         alert("NOT LOUD ENOUGH")
                     } else if(team.toLowerCase() == "wildcats!!!!" || team.toLowerCase() == "wildcats!!!!!" ||team.toLowerCase() == "wildcats!!!!!!") {
