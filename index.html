@@ -15,6 +15,18 @@
         <div class="the-text">
             <p id = "the_text"></p>
         </div>
+        <div class="buttons" id="button1">
+            <button type = "button" class="button" onclick="button1()">fine here's your card</button>
+        </div>
+        <div class="buttons" id="button2">
+            <button type = "button" class="button" onclick="button2()">yep i did</button>
+        </div>
+        <div class="buttons" id="button3">
+            <button type = "button" class="button" onclick="button3()">for real now</button>
+        </div>
+        <div class="buttons" id="form">
+            <input type = "text" class="search" id="what_team" name="what_team" onkeypress="search(event)">
+        </div>
 
         <script>
             //I mean if you reeeeallly want you can look at the script here and try to piece it together 
@@ -58,12 +70,77 @@
             }
             
             function openCard() {
+                //don't forget to use parentheses
+
+
+
+
+
+
+
+
                 var oslo = prompt("didn't think it'd be that easy huh? quick, what's the capital of norway?");
-                console.log(oslo.toLowerCase())
                 if (oslo.toLowerCase() == 'oslo') {
-                    //////////////the_text="nice. "
+                    the_text = `nice.`
+                    document.getElementById('button1').style.display = 'block';
                 } else {
                     oslo = prompt("nope, try again")
+                    the_text=the_text
+                    if (oslo.toLowerCase() == 'oslo') {
+                        the_text="nice."
+                        document.getElementById('button1').style.display = 'block';
+                    } else {
+                        the_text="wow. sad."
+                        document.getElementById('button1').style.display = 'block';
+                    }
+                }
+            }
+
+            function button1() {
+                the_text = 'YOU REALLY THOUGHT HUH'
+                document.getElementById('button1').style.display = 'none';
+                document.getElementById('button2').style.display = 'block';
+            }
+
+            function button2() {
+                document.getElementById('button2').style.display = 'none';
+                document.getElementById('button3').style.display = 'block';
+                window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank');
+                the_text= 'sorry i had to :)'
+
+            }
+
+            function button3() {
+                document.getElementById('button3').style.display = 'none';
+                the_text = "okay now just wait"
+                setTimeout(function() {console.log("okay i'm kinda running out of things I know how to do uh oh")}, 30000)
+                setTimeout(function() {console.log("uhhhh try running the function prettyPleaseOpenCard()")}, 30001)
+            }
+
+            function morseCode() {
+                console.log("morsecodetime")
+            }
+
+            function prettyPleaseOpenCard() {
+                document.getElementById('form').style.display = 'block';
+                the_text = "WHAT TEAM???"
+            }
+            
+            function search(ele) {
+                if(event.keyCode == 13) {
+                    var team = document.getElementById('what_team').value;
+                    console.log(team)
+                    if(team.toLowerCase() == "wildcats!!!") {
+                        document.getElementById('form').style.display = 'none';
+                        the_text = "right so you might wanna have your audio on now <3"
+                        morseCode()
+                    } else if (team.toLowerCase() == "wildcats!!" || team.toLowerCase() == "wildcats!" || team.toLowerCase() == "wildcats") {
+                        alert("NOT LOUD ENOUGH")
+                    } else if(team.toLowerCase() == "wildcats!!!!" || team.toLowerCase() == "wildcats!!!!!" ||team.toLowerCase() == "wildcats!!!!!!") {
+                        alert("woah too loud")
+                    } else {
+                        alert("wow.")
+                    }
                 }
             }
 
